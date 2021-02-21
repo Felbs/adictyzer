@@ -1,3 +1,4 @@
+from adicters import Adict
 from utils import *
 
 
@@ -40,7 +41,7 @@ def gind(ind, datadict):
 	
 def gindl(ind, datadict):
 
-	""" gindl() receives a list of indexes and returns a list containing lists of all given indexes """
+	""" gindl() receives a list and a datadic(dict) and returns a list of lists containing the entire information of given indexes """
 
 	if isinstance(ind, list):
 
@@ -50,3 +51,37 @@ def gindl(ind, datadict):
 			results.append(gind(i, datadict))
 
 		return results
+
+
+def columns(datadict):
+
+	if isinstance(datadict, dict):
+
+		for key in datadict.keys():
+			print(key, end=", ")
+
+		print()
+	else:
+
+		print("columns receives a dictionary as argument. not {type(datadict)}")
+
+
+def list_all(lis):
+
+	""" liss(), receives and list and prints formated list indexes """
+
+	if isinstance(lis, list):
+
+		for element in lis:
+
+			it = iter(element)
+
+			for el in element:
+
+				print(f'{next(it)}', end=" ")
+
+			print()
+	else:
+
+		print(f"liss function receives a list as argument. not {type(lis)}")
+

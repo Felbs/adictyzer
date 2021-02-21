@@ -32,3 +32,35 @@ def avg(lis):
 		av = float(su) / float(le)
 
 		return f"{av:.2f}"
+		del([su, le, av])
+
+
+def med(lis):
+
+	""" """
+
+	sor = sorted(lis)
+	indexes = []
+
+	if isinstance(lis, list):
+
+		if len(sor) %2 == 0:
+
+			for n in range(len(sor)):
+				indexes.append(n)
+
+			upper_val_index = int(len(indexes) / 2)
+			lower_val_index = upper_val_index - 1
+			
+			upper = sor[upper_val_index]
+			lower = sor[lower_val_index]
+
+			return f'{(upper + lower) / 2}'
+
+		else:
+
+			le = len(sor)
+
+			value_index = int(le / 2)
+
+			return str(sor[value_index])
