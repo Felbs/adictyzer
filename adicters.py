@@ -2,7 +2,7 @@ class Adict(dict):
 
 	def __init__(self):
 
-		self.result = []
+		self.result = AdictList()
 
 
 	def cols(self):
@@ -21,10 +21,10 @@ class Adict(dict):
 
 		if isinstance(ind, int):
 
-			self.result.clear()
+			result = AdictList()
 
 			for k in self:
-				self.result.append(self[k][ind])
+				result.append(self[k][ind])
 
 			return self.result
 
@@ -36,8 +36,10 @@ class Adict(dict):
 
 		if isinstance(lis, list):
 
+			result = AdictList()
+
 			for i in lis:
-				self.result.append(self.gind(i))
+				result.append(self.gind(i))
 
 			return self.result
 
@@ -45,8 +47,6 @@ class Adict(dict):
 class AdictList(list):
 
 	def __init__(self):
-
-		self.result = []
 
 
 	def sum(self):
