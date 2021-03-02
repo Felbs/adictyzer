@@ -8,7 +8,9 @@ def read_csv(file, encoding="utf-8", sep=","):
 	doc = open(file, encoding=encoding).read()
 
 	lines = doc.split('\n')
-	lines.remove('')
+
+	if '' in lines:
+		lines.remove('')
 
 	words = [l.split(sep) for l in lines]
 
