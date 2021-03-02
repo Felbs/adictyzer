@@ -1,8 +1,7 @@
 class Adict(dict):
 
 	def __init__(self):
-
-		self.result = AdictList()
+		pass
 
 
 	def cols(self):
@@ -26,7 +25,7 @@ class Adict(dict):
 			for k in self:
 				result.append(self[k][ind])
 
-			return self.result
+			return result
 
 
 
@@ -41,7 +40,7 @@ class Adict(dict):
 			for i in lis:
 				result.append(self.gind(i))
 
-			return self.result
+			return result
 
 
 class AdictList(list):
